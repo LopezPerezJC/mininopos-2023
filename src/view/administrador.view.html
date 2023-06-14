@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="../view/css/administrador.styles.css">
+    <link rel="stylesheet" href="../view/css/modulo_inicio.admin.css">
+    <link rel="stylesheet" href="../view/css/modulo_inventario.admin.css">
+    <link rel="stylesheet" href="../view/css/modales.css">
+    <link rel="stylesheet" href="../view/bootstrap-5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container contenedor-global">
+        <div class="header row w-100 align-items-center">
+            <h2 id="nombre-tienda" class="txt-center">MininoPOS</h2>
+        </div>
+        <div class="row w-100 contenedor-main">
+            <div class="menu col-2">
+                <div class="perfil-usuario">
+                    <img src="../../public/img/user-example.jpg" alt="">
+                    <p id="nombre-usario">admin649</p>
+                    <h3 id="rol-usuario">admin</h3>
+                </div>
+
+
+                <div class="menu-botones">
+                    <div class="botones" id="botones">
+                        <a href="#" class="btn btn-menu btn-primary" id="btn-home">
+                            <i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i>
+                            Inicio
+                        </a>
+                        <a href="#" class="btn btn-menu btn-light" id="btn-inventario">
+                            <i class="fa-solid fa-list-check fa-xl" style="color: #455dfc;"></i>
+                            Inventario
+                        </a>
+                        <a href="#" class="btn btn-menu btn-light">
+                            <i class="fa-solid fa-users fa-xl" style="color: #455dfc;"></i>
+                            Usuarios
+                        </a>
+                    </div>
+                    <a href="#" class="btn btn-menu btn-danger">
+                        <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #ffffff;"></i>
+                        Cerrar sesión
+                    </a>
+                </div>
+            </div>
+            <div class="contenedor-contenido col-10" id="contenedor-modulos">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal"></div>
+
+    <script src="https://kit.fontawesome.com/ae4444d2d2.js" crossorigin="anonymous"></script>
+    <script type="module" src="../controller/js/inicio.admin.controller.js"></script>
+    <script type="module" src="../controller/js/inventario.admin.controller.js"></script>
+    <script src="../controller/jquery.min.js"></script>
+    <script src="../controller/js/upload-img.js"></script>
+</body>
+</html>

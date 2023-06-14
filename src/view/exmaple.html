@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-modulo-inicio" id="container-modulo-inicio">
+        <div class="contenedor-targetas">
+            <div id="targeta targeta-dinero-caja">
+                <p>En caja</p>
+                <p>$389,785.40</p>
+            </div>
+            <div id="targeta targeta-agotados">
+                <p>45 productos agotados</p>
+            </div>
+        </div>
+        <div id="contenedor-grafica-ventas">
+            Aqui van los graficos de las ventas
+        </div>
+    </div>
+
+    <div class="contenedor-info">
+        <i class="fa-solid fa-circle-info fa-2xl" style="color: #455dfc;"></i>
+        <p>Ya estas en el módulo de Inicio 🐱</p>
+    </div>
+    <a href="#" class="btn" id="done">Aceptar</a>
+
+
+
+    navbar navbar-light bg-light
+
+
+
+<!--MODULO INVENTARIO -->
+
+    <div class="contenedor-filtros-buscador">
+        <div class="buscador-inventario">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                
+            <button class="btn btn-primary" type="submit">
+                <i class="fa-solid fa-magnifying-glass" style="color: #455dfc;"></i> 
+                Buscar
+            </button>
+        </div>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <i class="fa-solid fa-store fa-2xl" style="color: #455dfc;"></i>
+            En existencia</button>
+    
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <i class="fa-solid fa-circle-exclamation fa-2xl" style="color: #455dfc;"></i>
+                Agotados
+            </button>
+    </div>
+
+    <div class="contenedor-botones-inventario">
+        <button class="btn btn-success my-2 my-sm-0" id="btn-nuevo-producto" type="submit">
+            <i class="fa-solid fa-plus fa-2xl" style="color: #ffffff;"></i>
+            Agregar nuevo producto
+        </button>
+        <div class="contenedor-filtros-buscador">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="btn-filtrar-existencia" type="submit">
+                <i class="fa-solid fa-store fa-2xl" style="color: #455dfc;"></i>
+                En existencia
+            </button>
+
+            <button class="btn btn-outline-success my-2 my-sm-0" id="btn-filtrar-agotados" type="submit">
+                <i class="fa-solid fa-circle-exclamation fa-2xl" style="color: #455dfc;"></i>
+                Agotados
+            </button>
+        </div>
+    </div>
+    
+    <div id="contenedor-tabla-productos" class="contenedor-tabla-productos">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Coca cola de 3L</td>
+                <td><img src="#" height="50px" width="50px"/></td>
+                <td>$50.30</td>
+                <td>503</td>
+                <td>
+                    <button type="button" class="btn btn-warning">Editar</button>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <tr>
+                <th scope="row">1</th>
+                <td>Coca cola de 3L</td>
+                <td><img src="#" height="50px" width="50px"/></td>
+                <td>$50.30</td>
+                <td>503</td>
+                <td>
+                    <button type="button" class="btn btn-warning">Editar</button>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Coca cola de 3L</td>
+                <td><img src="#" height="50px" width="50px"/></td>
+                <td>$50.30</td>
+                <td>503</td>
+                <td>
+                    <button type="button" class="btn btn-warning">Editar</button>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Coca cola de 3L</td>
+                <td><img src="#" height="50px" width="50px"/></td>
+                <td>$50.30</td>
+                <td>503</td>
+                <td>
+                    <button type="button" class="btn btn-warning">Editar</button>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+<textarea type="text" name="descripcion_producto"  class="form-control" value="" id="descripcion_producto" cols="30" rows="10"></textarea>
+    
+
+<div class="subcontenedor-inputs">
+    <li>            
+        <span style="font-size:15px;">Precio</span>
+        <input type="text" name="precio_producto"  class="form-control" value="" id="precio_producto">
+    </li>
+    <li>            
+        <span style="font-size:15px;">Existencias</span>
+        <input type="text" name="existencias_producto"  class="form-control" value="" id="existencias_producto">
+    </li>
+</div>
+    
+</body>
+</html>

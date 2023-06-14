@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Administrador</title>
+    <link rel="stylesheet" href="../../view/css/super-admin.css">
+    <link rel="stylesheet" href="../../view/bootstrap-5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container contenedor-global">
+        <div class="header row w-100 align-items-center">
+            <h2 id="nombre-tienda" class="txt-center">MininoPOS</h2>
+            <div class="menu">
+                <div class="perfil-usuario">
+                    <img src="./../../../public/img/user-example.jpg" height="40px" width="40px" alt="">
+                    <div class="contenedor-info-usuario">
+                        <p id="nombre-usario">José Juan</p>
+                        <p id="rol-usuario">SuperAdmin<p/>
+                    </div>
+                </div>
+
+
+                <div class="menu-botones">
+                    <div class="botones" id="botones">
+                        <a href="#" class="btn btn-menu btn-primary" id="btn-home">
+                            <i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i>
+                            Inicio
+                        </a>
+                        <a href="#" class="btn btn-menu btn-light" id="btn-inventario">
+                            <i class="fa-solid fa-list-check fa-xl" style="color: #455dfc;"></i>
+                            Tiendas
+                        </a>
+                        <a href="#" class="btn btn-menu btn-light">
+                            <i class="fa-solid fa-users fa-xl" style="color: #455dfc;"></i>
+                            Usuarios
+                        </a>
+                    </div>
+                    <a href="#" class="btn btn-menu btn-danger">
+                        <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #ffffff;"></i>
+                        Cerrar sesión
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row w-100 contenedor-main">
+        </div>
+    </div>
+
+    <div id="modal"></div>
+
+    <script src="https://kit.fontawesome.com/ae4444d2d2.js" crossorigin="anonymous"></script>
+    <script src="../jquery.min.js"></script>
+</body>
+</html>
