@@ -20,7 +20,7 @@
 .menu {
     height: 50px;
     background-color: white;
-    border-bottom: 2px solid #455dfc;
+    border-bottom: 2px solid #dfe1f5;
 
     display: flex;
     flex-direction: row;
@@ -68,36 +68,62 @@
 
 .contenedor-main {
     background-color: white;
-    height: calc(100vh - 50px);
     padding: 10px;
 }
 
-/*MODULO INICIO SUPER-ADMIN*/
-
-.container-modulo-inicio {
-
+.container-datos {
+    height: calc(100vh - 200px);
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
-.contenedor-targetas {
+/* FORMULARIOS */
+/*MODAL*/
+.form_emer {
+    position: absolute;
+    top: calc(70vh / 2);
+    left: calc(70vw / 2);
     display: flex;
+    background: #d8d8d8;
+    align-items: center;
     justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    min-height: 100%;
-    min-width: 100%;
-}
+    z-index: 1000;
+    height: auto;
+    width: 300px;
+    border-radius: 8px;
 
-.targeta {
-    margin: 10px;
-    width: 48%;
-    min-height: 48%;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    flex-direction: column;
+    padding: 10px;
 }
-
-.numero-tiendas,
-.numero-usuarios,
-.productos-registrados {
+.form_emer h2 {
     text-align: center;
-    font-size: 20px;
+    color: black;
     font-weight: bold;
+}
+
+#form-new-tienda li {
+    list-style: none;
+}
+
+.tienda_info {
+    outline: 1px solid red;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: green;
+}
+
+#tienda_info > li{
+    width: 45%;
+}
+
+.contenedor-botones-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.contenedor-botones-form > a {
+    width: 48%;
 }

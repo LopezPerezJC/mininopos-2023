@@ -10,16 +10,14 @@
 <body>
     <div class="container contenedor-global">
         <div class="header row w-100 align-items-center">
-            <h2 id="nombre-tienda" class="txt-center">MininoPOS</h2>
+            <h2 id="nombre-tienda" class="txt-center">MininoPOS [SUPERADMIN]</h2>
             <div class="menu">
                 <div class="perfil-usuario">
                     <img src="./../../../public/img/user-example.jpg" height="40px" width="40px" alt="">
                     <div class="contenedor-info-usuario">
-                        <p id="nombre-usario">José Juan</p>
-                        <p id="rol-usuario">SuperAdmin<p/>
+                        <p id="nombre-usario">José Juan SuperAdmin</p>
                     </div>
                 </div>
-
 
                 <div class="menu-botones">
                     <div class="botones" id="botones">
@@ -27,11 +25,11 @@
                             <i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i>
                             Inicio
                         </a>
-                        <a href="#" class="btn btn-menu btn-light" id="btn-inventario">
+                        <a href="#" class="btn btn-menu btn-light" id="btn-tiendas">
                             <i class="fa-solid fa-list-check fa-xl" style="color: #455dfc;"></i>
                             Tiendas
                         </a>
-                        <a href="#" class="btn btn-menu btn-light">
+                        <a href="#" class="btn btn-menu btn-light" id="btn-usuarios">
                             <i class="fa-solid fa-users fa-xl" style="color: #455dfc;"></i>
                             Usuarios
                         </a>
@@ -43,7 +41,9 @@
                 </div>
             </div>
         </div>
-        <div class="row w-100 contenedor-main">
+        <div class="row w-100 contenedor-main" id="contenedor-main">
+            
+            
         </div>
     </div>
 
@@ -51,5 +51,6 @@
 
     <script src="https://kit.fontawesome.com/ae4444d2d2.js" crossorigin="anonymous"></script>
     <script src="../jquery.min.js"></script>
+    <script type="module" src="./super-admin.js"></script>
 </body>
 </html>

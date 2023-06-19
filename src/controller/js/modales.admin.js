@@ -51,7 +51,7 @@ export function modalNuevoProducto() {
   form_nuevoProducto.setAttribute("class", "form_emer");
   form_nuevoProducto.setAttribute("id", "form_emer");
   form_nuevoProducto.innerHTML = `
-    <form class="form" id="form-new-producto" action="" method="post">
+    <form class="form" id="form-new-producto" action="./upload.php" method="post" enctype="multipart/form-data">
         <h2 style="font-size:20px;">Agrega un nuevo producto</h2>
         <div class="contenedor-img-inputs">
             <div class="contenedor-inputs-form">
@@ -105,7 +105,7 @@ export function modalNuevoProducto() {
         <p>*Todos los campos deben estar rellenados</p>
         <div class="contenedor-botones-form">
             <a src="#" class="btn btn-danger" id="leave">Cancelar</a>
-            <a src="#" class="btn btn-primary" id="create" >Registrar</a>
+            <a src="#" class="btn btn-primary" id="create-producto" >Registrar</a>
         </div>
     </form>
     `;
@@ -114,6 +114,10 @@ export function modalNuevoProducto() {
   document.getElementById("leave").addEventListener("click", function (e) {
     document.getElementById("modal").innerHTML = "";
   });
+
+  document.getElementById("create-producto").addEventListener("click", function (e) {
+    alert('funcionando')
+  });  
 }
 
 /*MODAL EDITAR PRODUCTO*/

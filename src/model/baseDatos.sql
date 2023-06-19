@@ -1,9 +1,3 @@
-<?php
- class Usuario () {
-    $id_tienda
- }
-
-
 /*
 ********
 ADMIN
@@ -28,9 +22,3 @@ bitacoraUsuarios(id int not null auto_increment, id_tienda int, id_usuario int, 
 *****INSERT PRUEBAS
 INSERT INTO tienda values(1, "Tres Coronas", "Santos Reyes Pápalo, Cuicatlán, Oaxaca", "9513256997", "tresCoronas@gmail.com");
 INSERT INTO usuarios values(1, 1, "lopezperezjc", "Juan Carlos López Pérez", "$P4rr0w5", "super-admin", "");
-
-
-
-
-*/
-?>
