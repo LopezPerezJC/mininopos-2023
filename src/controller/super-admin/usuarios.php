@@ -1,5 +1,6 @@
 <?php
     require "../../model/dataBase_connection.php";
+    require "../PDF/fpdf.php";
     $BaseDatos = new BaseDatos();
     session_start();
 ?>
@@ -48,7 +49,7 @@
                             <i class="fa-solid fa-users fa-xl" style="color: #ffffff;"></i>
                             Usuarios
                         </a>
-                        <a href="cuestionario.php" class="btn btn-menu btn-primary">
+                        <a href="cuestionarios.php" class="btn btn-menu btn-primary">
                             <i class="fa-solid fa-spell-check fa-xl" style="color: #ffffff;"></i>
                             Cuestionarios
                         </a>
@@ -66,8 +67,12 @@
                 <div class="header-table">
                     <h4 class="">Usuarios registrados en el sistema</h4>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#nuevoUsuario">
-                        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-plus fa-xl" style="color: #ffffff;"></i>
                         Nuevo
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exportarUsuariosPDF">
+                    <i class="fa-regular fa-file-pdf fa-xl" style="color: #ffffff;"></i>
+                        Exportar a PDF
                     </button>
                 </div>
 
@@ -97,10 +102,10 @@
                         <?php echo  '<td><img height="50px" width="50px" src="data:image/jpeg;base64,' . base64_encode($row['img_usuario']) . '"/></td>' ?>
                         <td>
                             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editChildresn<?php echo $row['id']; ?>">
-                                Modificar
+                                <i class="fa-regular fa-pen-to-square fa-xl" style="color: #ffffff;"></i>
                             </button>
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $row['id']; ?>">
-                                Eliminar
+                                <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
                             </button>
                         </td>
                         </tr>

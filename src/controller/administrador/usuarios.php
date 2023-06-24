@@ -82,30 +82,31 @@
                             $resultado = $BaseDatos->obtenerUsuariosTienda($id_tienda);
                             ?>
                             <?php while ($row = $resultado->fetch_assoc()) { ?>
-                            <?php echo '<tr><td>' . $row["username"] . '</td>'?>                            
-                            <?php echo '<td>' . $row["nombre"] . '</td>'?>
-                            <?php echo  '<td><img height="50px" width="50px" src="data:image/jpeg;base64,' . base64_encode($row['img_usuario']) . '"/></td>' ?>
-                            <?php echo '<td>' . $row["rol"] . '</td>'?>
+                                <?php if($row["rol"] != "super-admin") { ?>
+                                    <?php echo '<tr><td>' . $row["username"] . '</td>'?>                            
+                                    <?php echo '<td>' . $row["nombre"] . '</td>'?>
+                                    <?php echo  '<td><img height="50px" width="50px" src="data:image/jpeg;base64,' . base64_encode($row['img_usuario']) . '"/></td>' ?>
+                                    <?php echo '<td>' . $row["rol"] . '</td>'?>
                             
-                            <td>
-                                <button type="button" class="btn btn-warning" data-toggle="modal"
-                                    data-target="#editChildresn<?php echo $row['id']; ?>">
-                                    Modificar
-                                </button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                    data-target="#deleteChildresn<?php echo $row['id']; ?>">
-                                    Eliminar
-                                </button>
-                            </td>
-                            </tr>
+                                <td>
+                                    <button type="button" class="btn btn-warning" data-toggle="modal"
+                                        data-target="#editChildresn<?php echo $row['id']; ?>">
+                                        Modificar
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        data-target="#deleteChildresn<?php echo $row['id']; ?>">
+                                        Eliminar
+                                    </button>
+                                </td>
+                                </tr>
 
-                            <!--Ventana Modal para Eliminar--->
-                            <?php include('ModalEliminarUsuario.php'); ?>
-                            <!--Ventana Modal para agregar un usuario--->
-                            <?php include('ModalRegistrarUsuario.php'); ?>
-                            <!--Ventana Modal para Actualizar--->
-                            <?php include('ModalModificarUsuario.php'); ?>
-
+                                <!--Ventana Modal para Eliminar--->
+                                <?php include('ModalEliminarUsuario.php'); ?>
+                                <!--Ventana Modal para agregar un usuario--->
+                                <?php include('ModalRegistrarUsuario.php'); ?>
+                                <!--Ventana Modal para Actualizar--->
+                                <?php include('ModalModificarUsuario.php'); ?>
+                                <?php } ?>
                             <?php } ?>
                             <?php $resultado->free_result(); ?>
                         </tbody>

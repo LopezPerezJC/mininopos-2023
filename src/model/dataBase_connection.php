@@ -186,6 +186,12 @@ class BaseDatos
 
         return $resultUsuarios;
     }
+    function getUsersGlobal(){
+        $users = "SELECT * FROM usuarios";
+        $usersResult = $this->conexion->query($users);
+
+        return $usersResult;
+    }
     
     /* CUESTIONARIOS */
     function nuevoCuestionario($id_tienda){

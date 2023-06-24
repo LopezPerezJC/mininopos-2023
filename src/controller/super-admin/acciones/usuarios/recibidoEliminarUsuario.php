@@ -8,15 +8,15 @@
     if($id_usuario != "") {
         try {
             $eliminarUsuario = $BaseDatos->eliminarUsuario($id_usuario);
-            echo "<script type='text/javascript'>
-                alert('Usuario eliminado!');
+            echo "<script type='text/javascript'>                
                 window.location='../../usuarios.php';
+                alert('Usuario eliminado!');
                 </script>";
             
         } catch(e) {
             echo "<script type='text/javascript'>
+                window.location='../../usuarios.php';                
                 alert('Usuario No eliminado!');
-                window.location='../../usuarios.php';
                 </script>";
         }
     } else {

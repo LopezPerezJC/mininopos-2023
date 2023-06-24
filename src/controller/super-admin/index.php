@@ -68,10 +68,8 @@
                             if($result != null){
                                 $i = 0;
                               while ($row = $result->fetch_array()) {
-                                // echo $row['nombre']."<br>";
                                 $i++;
                               }
-
                               echo $i;
                               } else {
                                     echo "Error!";
