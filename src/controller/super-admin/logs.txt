@@ -1,3 +1,0 @@
-insert into productos values (3, 1, "987654321", "Leche LALA 1L", 42.50, 21, "Leche deslactosada sin azúcar", "");
-
-

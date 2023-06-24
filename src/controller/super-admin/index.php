@@ -1,8 +1,8 @@
 <?php
     /*lista de servicios necesarios*/
     require "../../model/dataBase_connection.php";
-    $BaseDatos = new BaseDatos();;
-    // include "./super-admin.html";
+    $BaseDatos = new BaseDatos();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -22,9 +22,9 @@
                 <div class="perfil-usuario">
                     <img src="./../../../public/img/user-example.jpg" height="40px" width="40px" alt="">
                     <div class="contenedor-info-usuario">
-                        <p id="nombre-usario">
-                            José Juan
-                        </p>
+                        <?php
+                            echo '<p>' . $_SESSION["username_usuario"] . '<br>' . $_SESSION["rol_usuario"] . '</p>';
+                        ?>
                     </div>
                 </div>
 
@@ -39,12 +39,16 @@
                             <i class="fa-solid fa-list-check fa-xl" style="color: #455dfc;"></i>
                             Tiendas
                         </a>
-                        <a href="#" class="btn btn-menu btn-light" id="btn-usuarios">
+                        <a href="usuarios.php" class="btn btn-menu btn-light" id="btn-usuarios">
                             <i class="fa-solid fa-users fa-xl" style="color: #455dfc;"></i>
                             Usuarios
                         </a>
+                        <a href="cuestionarios.php" class="btn btn-menu btn-light">
+                            <i class="fa-solid fa-spell-check fa-xl" style="color: #455dfc;"></i>
+                            Cuestionarios
+                        </a>
                     </div>
-                    <a href="#" class="btn btn-menu btn-danger">
+                    <a href="logout.php" class="btn btn-menu btn-danger">
                         <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #ffffff;"></i>
                         Cerrar sesión
                     </a>
@@ -98,7 +102,7 @@
                     </div>
                     <div class="targeta targeta-productos-registrados">
                     <i class="fa-solid fa-layer-group fa-2xl" style="color: #ffffff;"></i>
-                    <p>Productos registrados</p>  
+                    <p>Productos registrados</p>
                     <p class="productos-registrados">
                     <?php
                             $result = $BaseDatos->getNumProductos();

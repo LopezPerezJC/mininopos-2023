@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --color-main: #455dfc;
+    --color-sec: #c0c0c0;
+  }
+  
+  .contenedor-global {
+    max-width: 1080px;
+    height: 100vh;
+  }
+  
+  .header {
+    width: 100vw;
+    height: 60px;
+    color: white;
+    background-color: var(--color-main);
+    text-align: center;
+  }
+  /*CONTENEDOR MAIN*/
+  .contenedor-main {
+    width: 100%;
+    max-width: (1080px - 300px);
+    height: calc(100vh - 60px);
+  
+    display: flex;
+  }
+  
+  /*MENÚ */
+  .menu {
+    width: 250px;
+    height: calc(100vh - 60px);
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    background-color: #f2f2f7;
+    opacity: 0.8;
+    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
+  }
+  .perfil-usuario {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .perfil-usuario img {
+    margin: 5px auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+  .perfil-usuario p {
+    position: relative;
+    bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .perfil-usuario h3 {
+    position: relative;
+    top: -30px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .contenedor-contenido {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+  }
+  .contenedor-contenido h5 {
+    text-align: center;
+  }
+
+  .contenedor-form-cuestionario {
+    width: 100%;
+    height: calc(100% - 120px);
+    overflow-y: scroll;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    padding: 10px;
+  }
+
+  /*MENÚ BOTONES*/
+  .menu-botones {
+    height: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .menu-botones .botones {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .btn {
+    margin: 4px 0;
+    border: 1px solid black;
+    font-size: 20px;
+  }
+  
+  
+  #home-admin {
+      background-color: blue;
+      height: 35px;
+      width: 100px;
+      border-radius: 4px;
+      text-align: center;
+      color: white;
+      font-style: 18px;
+      border: 0;
+      cursor: none;
+  }
+  
+  #home-admin:hover {
+      cursor: pointer;
+      background-color: grey;
+      transition: .3s all ease-in;
+  }
+
+  .targeta {
+    width: 48%;
+    height: 150px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+  }
+

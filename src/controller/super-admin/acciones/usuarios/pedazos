@@ -1,11 +1,11 @@
 
 <!--ventana para Update--->
-<div class="modal fade" id="editChildresn<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal hide" id="modalModificarUsuario<?php echo $row["id"]; ?>; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header" style="background-color: #455dfc !important;">
+      <div class="modal-header" style="background-color: #563d7c !important;">
         <h6 class="modal-title" style="color: #fff; text-align: center;">
-            Actualizar Información Tienda
+            Modificar información usuario
         </h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -13,8 +13,8 @@
       </div>
 
 
-      <form method="POST" action="./acciones/tiendas/recibidoModificarTienda.php">
-        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+      <form method="POST" action="./acciones/usuarios/recibidoModificarUsuario.php">
+        <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 
             <div class="modal-body" id="cont_modal">
 
@@ -34,7 +34,6 @@
                   <label for="recipient-name" class="col-form-label">Correo</label>
                   <input type="email" name="correo_tienda" class="form-control" value="<?php echo $row['correo']; ?>" required="true">
                 </div>
-                
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -45,4 +44,8 @@
     </div>
   </div>
 </div>
-<!---fin ventana Update --->
+
+
+
+
+

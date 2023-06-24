@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.contenedor-global {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #455dfc;
+    color: white;
+}
+
+.menu {
+    height: 50px;
+    background-color: white;
+    border-bottom: 2px solid #dfe1f5;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    color: black;
+}
+
+.perfil-usuario {
+    width: auto;
+    height: 100%;
+    margin: 0 5px;
+    padding: 0 4px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.perfil-usuario img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.contenedor-info-usuario p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.menu-botones {
+    width: calc(100% - 200px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-main {
+    background-color: white;
+    padding: 10px;
+}
+
+.container-datos {
+    height: calc(100vh - 200px);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+/* FORMULARIOS */
+/*MODAL*/
+
+.tienda_info {
+    outline: 1px solid red;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: green;
+}
+
+#tienda_info > li{
+    width: 45%;
+}
+
+.contenedor-botones-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.contenedor-botones-form > a {
+    width: 48%;
+}
+
+
+/*modal registro usuario*/
+.selecciona_tienda::before {
+    content: 'Selecciona una tienda';
+    color: black;
+}

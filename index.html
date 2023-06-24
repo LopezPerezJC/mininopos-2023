@@ -88,24 +88,22 @@
         </button>
       </div>
       <div class="contenedor-form">
-        <form id="inicia-sesion-mininopos" class="m-auto">
+        <form id="inicia-sesion-mininopos" class="m-auto" action="./src/controller/login/login.php" method="post">
           <!-- Email input -->
           <h2>Inicia sesión</h2>
           <div class="form-outline mb-2">
-            <input type="text" id="form2Example1" class="form-control" />
-            <label class="form-label" for="form2Example1"
-              >Nombre de usuario</label
-            >
+            <label class="form-label" for="form2Example1">Nombre de usuario</label>
+            <input type="text" id="form2Example1" class="form-control" name="username_usuario"/>            
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-2">
-            <input type="password" id="form2Example2" class="form-control" />
-            <label class="form-label" for="form2Example2">Contraseña</label>
+            <label class="form-label" for="form2Example2" >Contraseña</label>
+            <input type="password" id="form2Example2" class="form-control" name="contrasenia_usuario"/>            
           </div>
 
           <!-- Submit button -->
-          <button type="button" class="btn btn-primary w-100 btn-block mb-2">
+          <button type="submit" class="btn btn-primary w-100 btn-block mb-2" name="btn-login">
             Ingresar
           </button>
 

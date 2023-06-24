@@ -6,7 +6,7 @@ export function modalNuevaTienda() {
   form_nuevaTienda.setAttribute("class", "form_emer");
   form_nuevaTienda.setAttribute("id", "form_emer");
   form_nuevaTienda.innerHTML = `
-        <form class="form" id="form-new-tienda" action="./acciones/registrarTienda.php" method="post" enctype="multipart/form-data">
+        <form class="form" id="form-new-tienda" action="./acciones/tiendas/registrarTienda.php" method="post" enctype="multipart/form-data">
           <h2 style="font-size:20px;">Registra una tienda</h2>
           <li>
               <span style="font-size:15px;">Nombre</span>

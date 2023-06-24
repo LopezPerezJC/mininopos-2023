@@ -7,14 +7,21 @@
 
     if($idRegistros != "") {
         try {
-            $BaseDatos->eliminartienda($idRegistros);
-            echo'alert("Tienda eliminada con éxito!");
-    </script>';
+            $BaseDatos->eliminarTienda($idRegistros);
+            echo "<script type='text/javascript'>
+                alert('Tienda eliminada!');
+                window.location='../../tiendas.php';
+            </script>";
         } catch(e) {
-            echo "Error";
+            echo "<script type='text/javascript'>
+                alert('No se pudo eliminar la tienda!');
+                window.location='../../tiendas.php';
+            </script>";
         }
     } else {
-        echo'alert("Tienda no eliminada!");
-    </script>';
+        echo "<script type='text/javascript'>
+                alert('Id vacio!');
+                window.location='../../tiendas.php';
+            </script>";
     }
 ?>
