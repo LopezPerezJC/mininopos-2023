@@ -194,24 +194,65 @@ class BaseDatos
     }
     
     /* CUESTIONARIOS */
-    function nuevoCuestionario($id_tienda){
-        $registrar = "INSERT INTO cuestionarios VALUES(, '$id_tienda', '$respuesta1', '$respuesta2', '$respuesta3', '$sugerencia')";
+    function nuevoCuestionario($id, $id_tienda, $id_usuario, $respuesta1, $respuesta2, $respuesta3, $sugerencia) {
+        $registrar = "INSERT INTO cuestionarios VALUES('$id', '$id_tienda', '$id_usuario', '$respuesta1', '$respuesta2', '$respuesta3', '$sugerencia')";
         $resultado = $this->conexion->query($registrar);
 
         return $resultado;
 
         //CREATE TABLE cuestionarios(id int not null auto_increment, id_tienda int, $respuesta1 int, $respuesta2 int, $respuesta3 int, $sugerencia varchar(300), primary key(id), foreign key(id_tienda) references tiendas(id));
+        //create table cuestionarios(id int not null auto_increment, id_tienda int, id_usuario, respuesta1 int, respuesta2 int, respuesta3 int, sugerencia varchar(200), primary key(id), foreign key(id_tienda) references tiendas(id), foreign key(id_usuario) references usuarios(id)) on delete on update cascade;
         
     }
 
-    function obtenerCuestionariosGlobal(){
-        $consultar = "SELECT * FROM cuestionarios";
-        $resultado = $this->conexion->query($consultar);
+    function obtener_Resultados_Pregunta1(){
+        $consulta = "SELECT t.respuesta1, COUNT(c.respuesta1) AS conteo FROM (SELECT 1 AS respuesta1 UNION ALL SELECT 2 AS respuesta1 UNION ALL SELECT 3 AS respuesta1 UNION ALL SELECT 4 AS respuesta1 UNION ALL SELECT 5 AS respuesta1) AS t LEFT JOIN cuestionarios AS c ON t.respuesta1 = c.respuesta1 GROUP BY t.respuesta1";
+        $resultados = $this->conexion->query($consulta);
 
-        return $resultado;
-
+        $resultados = $resultados->fetch_all();        
+        return $resultados;
         //CREATE TABLE cuestionarios(id int not null auto_increment, id_tienda int, $respuesta1 int, $respuesta2 int, $respuesta3 int, $sugerencia varchar(300), primary key(id), foreign key(id_tienda) references tiendas(id));
         
+    }
+
+    function obtener_Resultados_Pregunta2(){
+        $consulta = "SELECT t.respuesta2, COUNT(c.respuesta2) AS conteo FROM (SELECT 1 AS respuesta2 UNION ALL SELECT 2 AS respuesta2 UNION ALL SELECT 3 AS respuesta2 UNION ALL SELECT 4 AS respuesta2 UNION ALL SELECT 5 AS respuesta2) AS t LEFT JOIN cuestionarios AS c ON t.respuesta2 = c.respuesta2 GROUP BY t.respuesta2";
+        $resultados = $this->conexion->query($consulta);
+
+        $resultados = $resultados->fetch_all();        
+        return $resultados;
+        //CREATE TABLE cuestionarios(id int not null auto_increment, id_tienda int, $respuesta1 int, $respuesta2 int, $respuesta3 int, $sugerencia varchar(300), primary key(id), foreign key(id_tienda) references tiendas(id));
+        
+    }
+
+    function obtener_Resultados_Pregunta3(){
+        $consulta = "SELECT t.respuesta3, COUNT(c.respuesta3) AS conteo FROM (SELECT 1 AS respuesta3 UNION ALL SELECT 2 AS respuesta3 UNION ALL SELECT 3 AS respuesta3 UNION ALL SELECT 4 AS respuesta3 UNION ALL SELECT 5 AS respuesta3) AS t LEFT JOIN cuestionarios AS c ON t.respuesta3 = c.respuesta3 GROUP BY t.respuesta3";
+        $resultados = $this->conexion->query($consulta);
+
+        $resultados = $resultados->fetch_all();        
+        return $resultados;
+        //CREATE TABLE cuestionarios(id int not null auto_increment, id_tienda int, $respuesta1 int, $respuesta2 int, $respuesta3 int, $sugerencia varchar(300), primary key(id), foreign key(id_tienda) references tiendas(id));
+        
+    }
+
+
+    function encuestaContestada($id_usuario){
+        $consultar = "SELECT id_usuario FROM cuestionarios WHERE id_usuario=$id_usuario";
+        $resultado = $this->conexion->query($consultar);
+
+
+        return $resultado;
+        
+        // while($row = $resultado->fetch_assoc()){
+        //     echo '<pre>';
+        //         print_r($row);
+        //     echo '</echo>';
+        //     if($row['id_usuario'] == $id_usuario){
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
     }
  
     // function getData($sql)

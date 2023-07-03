@@ -20,10 +20,15 @@
             <h2 id="nombre-tienda" class="txt-center">MininoPOS</h2>
             <div class="menu">
                 <div class="perfil-usuario">
-                    <img src="./../../../public/img/user-example.jpg" height="40px" width="40px" alt="">
-                    <div class="contenedor-info-usuario">
+                    <?php
+                            $obtenerDatosPerfil = $BaseDatos->obtenerDatosUsuario($_SESSION["id_usuario"]); ?>
+                    <?php while ($row = $obtenerDatosPerfil->fetch_assoc()) { ?>
+                    <?php echo  '<img height="50px" width="50px" src="data:image/jpeg;base64,' . base64_encode($row['img_usuario']) . '"/>' ?>
+
+                    <?php } ?>
+                    <div class="container-info-usuario">
                         <?php
-                            echo '<p>' . $_SESSION["username_usuario"] . '<br>' . $_SESSION["rol_usuario"] . '</p>';
+                            echo '<p id="nombre-usuario">' . $_SESSION["username_usuario"] . '</p><p id="rol-usuario">' . $_SESSION["rol_usuario"] . '</p>';
                         ?>
                     </div>
                 </div>
@@ -59,7 +64,7 @@
             <div class="modulo-inicio" id="modulo-inicio">
                 <div class="contenedor-targetas">
                     <div class="targeta tiendas-registrados">
-                    <i class="fa-solid fa-money-bills fa-2xl" style="color: #ffffff;"></i>
+                        <i class="fa-solid fa-store fa-2xl" style="color: #455fdc;"></i>    
                         <p>Tiendas registradas</p>
                         <p class="numero-tiendas">
                         <?php
@@ -78,28 +83,28 @@
                         </p>
                     </div>
                     <div class="targeta targeta-usuarios">
-                    <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
-                    <p>Usuarios</p>  
-                    <p class="numero-usuarios">
-                    <?php
-                            $result = $BaseDatos->getNumUsuarios();
+                        <i class="fa-solid fa-user fa-2xl" style="color: #455fdc;"></i>
+                        <p>Usuarios</p>  
+                        <p class="numero-usuarios">
+                        <?php
+                                $result = $BaseDatos->getNumUsuarios();
 
-                            if($result != null){
-                                $i = 0;
-                              while ($row = $result->fetch_array()) {
-                                // echo $row['nombre']."<br>";
-                                $i++;
-                              }
+                                if($result != null){
+                                    $i = 0;
+                                while ($row = $result->fetch_array()) {
+                                    // echo $row['nombre']."<br>";
+                                    $i++;
+                                }
 
-                              echo $i;
-                              } else {
-                                    echo "Error!";
-                              }
-                        ?>
-                    </p>
+                                echo $i;
+                                } else {
+                                        echo "Error!";
+                                }
+                            ?>
+                        </p>
                     </div>
                     <div class="targeta targeta-productos-registrados">
-                    <i class="fa-solid fa-layer-group fa-2xl" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-layer-group fa-2xl" style="color: #455fdc;"></i>
                     <p>Productos registrados</p>
                     <p class="productos-registrados">
                     <?php
@@ -118,11 +123,6 @@
                               }
                         ?> 
                     </p>
-                    </div>
-                    <div class="targeta tareta-ventas">
-                    <i class="fa-solid fa-money-bill-trend-up fa-2xl" style="color: #ffffff;"></i>
-                    <p>Ventas realizadas</p>  
-                    <p>865,288</p>
                     </div>
                 </div>
             </div>

@@ -30,6 +30,7 @@
     color: black;
 }
 
+/*PERFIL usuario*/
 .perfil-usuario {
     width: auto;
     height: 100%;
@@ -48,16 +49,26 @@
     width: 40px;
     border-radius: 50%;
 }
-
-.contenedor-info-usuario p{
+.container-info-usuario {
+    margin-left: 8px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin-left: 10px;
-    font-size: 16px;
+}
+.container-info-usuario p{
+    margin: 0;
+    font-size: 14px;
+}
+#nombre-usuario {
     font-weight: bold;
 }
+
+/*****/
+
+
+
 .menu-botones {
     width: calc(100% - 200px);
     display: flex;

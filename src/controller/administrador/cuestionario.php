@@ -24,21 +24,19 @@
         <div class="row w-100 contenedor-main">
             <div class="menu col-2">
                 <div class="perfil-usuario">
-                    <?php
-                            $obtenerDatosPerfil = $BaseDatos->obtenerDatosUsuario($_SESSION["id_usuario"]); ?>
+                    <?php $obtenerDatosPerfil = $BaseDatos->obtenerDatosUsuario($_SESSION["id_usuario"]); ?>
                     <?php while ($row = $obtenerDatosPerfil->fetch_assoc()) { ?>
                     <?php echo  '<img height="50px" width="50px" src="data:image/jpeg;base64,' . base64_encode($row['img_usuario']) . '"/>' ?>
-
                     <?php } ?>
-                    <?php
-                            echo '<p id="nombre-usario">' . $_SESSION["username_usuario"] . '<p id="rol-usuario">' . $_SESSION["rol_usuario"] . '</p>';
-                    ?>
+                    <div class="container-info-usuario">
+                        <?php echo '<p id="nombre-usuario">' . $_SESSION["nombre_usuario"] . '</p><p id="rol-usuario">' . $_SESSION["rol_usuario"] . '</p>'; ?>
+                    </div>
                 </div>
 
 
                 <div class="menu-botones">
                     <div class="botones" id="botones">
-                        <a href="#" class="btn btn-menu btn-light" id="btn-home">
+                        <a href="index.php" class="btn btn-menu btn-light" id="btn-home">
                             <i class="fa-solid fa-house fa-lg" style="color: #455dfc;"></i>
                             Inicio
                         </a>
@@ -66,9 +64,21 @@
                 <p>¡Hola!, por favor dedique unos minutos de su tiempo para rellenar el siguiente cuestionario. Esto nos ayuda
                     a conocer mejor su experiencia con el software y mejorla.
                 </p>
+                <?php
+                    $resultado = $BaseDatos->encuestaContestada($_SESSION["id_usuario"]);
+                        
+                    if($resultado->num_rows > 0){
+                        echo "<script type='text/javascript'>
+                        alert('Ya has contestado este cuestionario!');
+                        window.location='./index.php';
+                        </script>";
+                    }
+                ?>
+
                 <div class="contenedor-form-cuestionario">
-                    <form action="RecibidoCuestionario.php" method="get">
+                    <form action="RecibidoCuestionario.php" method="POST">
                         <input hidden type="text" name="id_tienda" value="<?php echo $_SESSION["id_tienda_usuario"] ?>">
+                        <input hidden type="text" name="id_usuario" value="<?php echo $_SESSION["id_usuario"] ?>">
                         <div class="mb-3">
                             <label for="opciones-pregunta-1" class="form-label">1. ¿Es la interfaz de nuestro software fácil de usar?</label>
                             <select name="opciones-pregunta-1" class="form-control" id="">
@@ -106,7 +116,7 @@
                             <label for="pregunta-4" class="form-label">4. ¿Cómo podemos mejorar nuestro software?</label>
                             <textarea name="pregunta-4" class="form-control" id="" cols="30" rows="4" style="resize: none;"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar cuestionario</button>
+                        <button type="submit" name="btn-enviar-cuestionario" class="btn btn-primary">Enviar cuestionario</button>
                     </form>
                 </div>
             </div>

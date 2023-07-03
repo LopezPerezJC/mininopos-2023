@@ -24,15 +24,13 @@
         <div class="row w-100 contenedor-main">
             <div class="menu col-2">
                 <div class="perfil-usuario">
-                    <?php
-                            $obtenerDatosPerfil = $BaseDatos->obtenerDatosUsuario($_SESSION["id_usuario"]); ?>
-                            <?php while ($row = $obtenerDatosPerfil->fetch_assoc()) { ?>
-                            <?php echo  '<img height="50px" width="50px" src="data:image/jpeg;base64,' . base64_encode($row['img_usuario']) . '"/>' ?>
-
-                            <?php } ?>
-                    <?php
-                            echo '<p id="nombre-usario">' . $_SESSION["username_usuario"] . '<p id="rol-usuario">' . $_SESSION["rol_usuario"] . '</p>';
-                    ?>
+                    <?php $obtenerDatosPerfil = $BaseDatos->obtenerDatosUsuario($_SESSION["id_usuario"]); ?>
+                    <?php while ($row = $obtenerDatosPerfil->fetch_assoc()) { ?>
+                    <?php echo  '<img height="50px" width="50px" src="data:image/jpeg;base64,' . base64_encode($row['img_usuario']) . '"/>' ?>
+                    <?php } ?>
+                    <div class="container-info-usuario">
+                        <?php echo '<p id="nombre-usuario">' . $_SESSION["nombre_usuario"] . '</p><p id="rol-usuario">' . $_SESSION["rol_usuario"] . '</p>'; ?>
+                    </div>
                 </div>
 
 
@@ -50,6 +48,10 @@
                             <i class="fa-solid fa-users fa-xl" style="color: #ffffff;"></i>
                             Usuarios
                         </a>
+                        <a href="cuestionario.php" class="btn btn-menu btn-light">
+                            <i class="fa-solid fa-spell-check fa-xl" style="color: #455fdc;"></i>
+                            Cuestionario
+                        </a>
                     </div>
                     <a href="../super-admin/logout.php" class="btn btn-danger">
                         <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #ffffff;"></i>
@@ -64,6 +66,10 @@
                         <i class="fa-solid fa-plus fa-xl" style="color: #ffffff;"></i>
                         Nuevo usuario
                     </button>
+                    <a href="./modulos/reportes_pdf_usuarios.php" target="_blank" class="btn btn-secondary">
+                        <i class="fa-regular fa-file-pdf fa-xl" style="color: #ffffff;"></i>
+                        Exportar a PDF
+                    </a>
                 </div>
                 <div class="container-datos">                    
                     <table class="table">

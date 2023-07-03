@@ -44,6 +44,8 @@
     background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
     background-size: 10px 10px;
   }
+
+  /* Perfil usuario */
   .perfil-usuario {
     margin: 10px 0px;
     display: flex;
@@ -58,18 +60,18 @@
     border-radius: 50%;
   }
   
-  .perfil-usuario p {
-    position: relative;
-    bottom: 10px;
+  #nombre-usuario{
     font-size: 16px;
-  }
-  
-  .perfil-usuario h3 {
-    position: relative;
-    top: -30px;
-    font-size: 14px;
     font-weight: bold;
   }
+  
+  #rol-usuario {
+    position: relative;
+    top: -10px;
+    font-size: 14px;
+  }
+  
+  /**/
   
   .contenedor-contenido {
       padding: 10px;

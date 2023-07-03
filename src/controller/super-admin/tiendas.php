@@ -29,14 +29,18 @@
             <h2 id="nombre-tienda" class="txt-center">MininoPOS</h2>
             <div class="menu">
                 <div class="perfil-usuario">
-                    <img src="./../../../public/img/user-example.jpg" height="40px" width="40px" alt="">
-                    <div class="contenedor-info-usuario">
+                    <?php
+                            $obtenerDatosPerfil = $BaseDatos->obtenerDatosUsuario($_SESSION["id_usuario"]); ?>
+                    <?php while ($row = $obtenerDatosPerfil->fetch_assoc()) { ?>
+                    <?php echo  '<img height="50px" width="50px" src="data:image/jpeg;base64,' . base64_encode($row['img_usuario']) . '"/>' ?>
+
+                    <?php } ?>
+                    <div class="container-info-usuario">
                         <?php
-                            echo '<p>' . $_SESSION["username_usuario"] . '<br>' . $_SESSION["rol_usuario"] . '</p>';
+                            echo '<p id="nombre-usuario">' . $_SESSION["username_usuario"] . '</p><p id="rol-usuario">' . $_SESSION["rol_usuario"] . '</p>';
                         ?>
                     </div>
                 </div>
-
 
                 <div class="menu-botones">
                     <div class="botones" id="botones">
@@ -48,8 +52,12 @@
                             <i class="fa-solid fa-list-check fa-xl" style="color: #ffffff;"></i>
                             Tiendas
                         </a>
-                        <a href="cuestionario.php" class="btn btn-menu btn-primary">
-                            <i class="fa-solid fa-spell-check fa-xl" style="color: #ffffff;"></i>
+                        <a href="usuarios.php" class="btn btn-menu btn-light" id="btn-usuarios">
+                            <i class="fa-solid fa-users fa-xl" style="color: #455dfc;"></i>
+                            Usuarios
+                        </a>
+                        <a href="cuestionarios.php" class="btn btn-menu btn-light">
+                            <i class="fa-solid fa-spell-check fa-xl" style="color: #455dfc;"></i>
                             Cuestionarios
                         </a>
                     </div>
@@ -66,9 +74,13 @@
                 <div class="header-table">
                     <h4 class="">Tiendas registradas en el sistema</h4>
                     <a href="#" class="btn btn-success"  id="btn-nueva-tienda">
-                        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff;"></i>
+                        <i class="fa-solid fa-plus fa-xl" style="color: #ffffff;"></i>
                         Nuevo
-                    </a>                    
+                    </a>
+                    <a href="./modulos/reportes_pdf_tiendas.php" target="_blank" class="btn btn-secondary">
+                        <i class="fa-regular fa-file-pdf fa-xl" style="color: #ffffff;"></i>
+                        Exportar a PDF
+                    </a>           
                 </div>
                 
                 <div class="container-datos">

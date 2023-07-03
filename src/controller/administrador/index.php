@@ -24,15 +24,13 @@
         <div class="row w-100 contenedor-main">
             <div class="menu col-2">
                 <div class="perfil-usuario">
-                    <?php
-                            $obtenerDatosPerfil = $BaseDatos->obtenerDatosUsuario($_SESSION["id_usuario"]); ?>
+                    <?php $obtenerDatosPerfil = $BaseDatos->obtenerDatosUsuario($_SESSION["id_usuario"]); ?>
                     <?php while ($row = $obtenerDatosPerfil->fetch_assoc()) { ?>
                     <?php echo  '<img height="50px" width="50px" src="data:image/jpeg;base64,' . base64_encode($row['img_usuario']) . '"/>' ?>
-
                     <?php } ?>
-                    <?php
-                            echo '<p id="nombre-usario">' . $_SESSION["username_usuario"] . '<p id="rol-usuario">' . $_SESSION["rol_usuario"] . '</p>';
-                    ?>
+                    <div class="container-info-usuario">
+                        <?php echo '<p id="nombre-usuario">' . $_SESSION["nombre_usuario"] . '</p><p id="rol-usuario">' . $_SESSION["rol_usuario"] . '</p>'; ?>
+                    </div>
                 </div>
 
 
@@ -50,6 +48,14 @@
                             <i class="fa-solid fa-users fa-xl" style="color: #455dfc;"></i>
                             Usuarios
                         </a>
+                        <!-- <a href="#" class="btn btn-menu btn-light">
+                            <i class="fa-solid fa-spell-check fa-xl" style="color: #455fdc;"></i>
+                            Bitácora
+                        </a>
+                        <a href="#" class="btn btn-menu btn-light">
+                            <i class="fa-solid fa-spell-check fa-xl" style="color: #455fdc;"></i>
+                            Citas
+                        </a> -->
                         <a href="cuestionario.php" class="btn btn-menu btn-light">
                             <i class="fa-solid fa-spell-check fa-xl" style="color: #455fdc;"></i>
                             Cuestionario
@@ -71,7 +77,7 @@
                     while($obtenerNumeroProductos->fetch_assoc()) {
                         $i++;
                     }
-                    echo "<h3> Usuarios registrados " . "<br>" . $i . "</h3> ";
+                    echo "<h3>Productos registrados " . "<br>" . $i . "</h3> ";
 
                 echo '</div>';
 
@@ -81,7 +87,7 @@
                     while($obtenerNumeroUsuarios->fetch_assoc()) {
                         $j++;
                     }
-                    echo "<h3>Productos registrados  " . "<br>" . $j . "</h3>";
+                    echo "<h3>Usuarios registrados " . "<br>" . $j . "</h3>";
                 echo '</div>';
                  ?>
             </div>

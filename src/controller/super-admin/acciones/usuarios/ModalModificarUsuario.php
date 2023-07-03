@@ -13,13 +13,12 @@
       </div>
 
 
-      <form method="POST" action="recib_Update.php">
+      <form method="POST" action="recibidoModificarUsuario.php">
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-
             <div class="modal-body" id="cont_modal">
 
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Nombre del Niño:</label>
+                  <label for="recipient-name" class="col-form-label">Nombre</label>
                   <input type="text" name="nombre" class="form-control" value="<?php echo $row['nombre']; ?>" required="true">
                 </div>
                 <div class="form-group">
@@ -28,12 +27,12 @@
                 </div>
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Telefono:</label>
-                  <input type="number" name="celular" class="form-control" value="<?php echo $row['celular']; ?>" required="true">
+                  <input type="number" name="telefono" class="form-control" value="<?php echo $row['telefono']; ?>" required="true">
                 </div>
                 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="submit" class="btn btn-primary">Guardar Cambios</button>
             </div>
        </form>

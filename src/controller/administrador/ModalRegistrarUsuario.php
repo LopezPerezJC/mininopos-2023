@@ -5,7 +5,7 @@
                 <h6 class="modal-title" style="color: #fff; text-align: center;">
                     Registrar un usuario
                 </h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn btn-danger close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
